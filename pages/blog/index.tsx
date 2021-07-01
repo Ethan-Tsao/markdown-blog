@@ -3,8 +3,9 @@ import path from "path";
 import matter from "gray-matter";
 import React from "react";
 import { GetStaticProps } from "next";
-import Post from "components/Post";
-import sortByDate from "../../utils";
+import BlogCard from "components/Card";
+import Navbar from "components/Navbar";
+import { Box, Flex } from "@chakra-ui/react";
 
 interface Frontmatter {
   title: string;
@@ -25,13 +26,19 @@ interface Props {
 
 const BlogPage: React.FC<Props> = ({ posts }) => {
   return (
-    <div>
-      <div>
+    <Box
+      maxW={{ base: "90%", lg: "65%" }}
+      mx="auto"
+      px={{ base: "6", lg: "8" }}
+      align="center"
+    >
+      <Navbar />
+      <Flex flexDirection="column" alignItems="center">
         {posts.map((post: IPost) => (
-          <Post post={post} />
+          <BlogCard key={post.slug} post={post} />
         ))}
-      </div>
-    </div>
+      </Flex>
+    </Box>
   );
 };
 
