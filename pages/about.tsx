@@ -5,9 +5,12 @@ import {
   Text,
   Image,
   useColorModeValue,
+  IconButton,
 } from "@chakra-ui/react";
+import { FaYoutube, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import Navbar from "components/Navbar";
 import Typed from "react-typed";
+import Link from "next/link";
 
 const About = () => {
   const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
@@ -35,16 +38,44 @@ const About = () => {
           py={{ base: 15, md: 20 }}
           direction={{ base: "column", md: "row" }}
         >
-          <Stack flex={1} spacing={{ base: 5, md: 10 }} align={"center"}>
+          <Stack flex={1} spacing={{ base: 5, md: 10 }} align={"center"} mb={3}>
             <Box>
-              <Image src="images/about/img1.jpg" />
+              <Image src="images/about/img1.jpg" rounded="full" />
             </Box>
             <Heading size="2xl">
               <Text>Ethan Tsao</Text>
             </Heading>
-            <Heading>
-              <Text>My name is Ethan</Text>
-            </Heading>
+            <Stack direction={"row"} spacing={10}>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/channel/UCOREnmPcCxJBGjsdko-6-YA"
+              >
+                <IconButton
+                  aria-label="Youtube Link"
+                  icon={<FaYoutube />}
+                  variant="transparent"
+                  fontSize="3xl"
+                />
+              </a>
+              <IconButton
+                aria-label="LinkedIn Link"
+                icon={<FaLinkedin />}
+                variant="transparent"
+                fontSize="3xl"
+              />
+              <IconButton
+                aria-label="Instagram Link"
+                icon={<FaInstagram />}
+                variant="transparent"
+                fontSize="3xl"
+              />
+              <IconButton
+                aria-label="Twitter Link"
+                icon={<FaTwitter />}
+                variant="transparent"
+                fontSize="3xl"
+              />
+            </Stack>
           </Stack>
           <Stack flex={1} align={"flex-start"}>
             <Heading textAlign="left" size={"md"} lineHeight={"1.5"}>

@@ -11,8 +11,11 @@ import {
   Heading,
   useColorModeValue,
   Image,
+  Button,
   Text,
 } from "@chakra-ui/react";
+import { FaArrowLeft } from "react-icons/fa";
+import Link from "next/link";
 
 interface Frontmatter {
   title: string;
@@ -35,7 +38,13 @@ const PostPage: React.FC<Props> = ({
   return (
     <Box maxW="65%" mx="auto" px={{ base: "6", lg: "8" }}>
       <Navbar />
-      <Flex margin={4} flexDirection="column" px={{ base: "6", lg: "8" }}>
+      <Link href="/book-blog">
+        <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
+          <FaArrowLeft />
+          Back to Book Blog
+        </Button>
+      </Link>
+      <Flex flexDirection="column" px={{ base: "6", lg: "8" }}>
         <Heading as="h1" size="2xl" py={5} textAlign="left" color={mode}>
           {title}
         </Heading>

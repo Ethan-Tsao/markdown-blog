@@ -51,7 +51,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
           marginTop="5%"
         >
           <LinkBox>
-            <LinkOverlay href={`blog/${post.slug}`}>
+            <LinkOverlay href={`book-blog/${post.slug}`}>
               <Image
                 borderRadius="lg"
                 src={post.frontmatter.cover_image}
@@ -72,7 +72,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
         marginRight={3}
       >
         <LinkBox>
-          <LinkOverlay href={`blog/${post.slug}`} color={mode}>
+          <LinkOverlay href={`book-blog/${post.slug}`} color={mode}>
             <Heading
               marginTop="1"
               textAlign={{ base: "center", md: "left" }}
