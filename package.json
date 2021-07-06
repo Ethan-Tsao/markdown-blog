@@ -17,6 +17,7 @@
     "@types/node": "^15.6.1",
     "@types/pg": "^8.6.0",
     "@types/react-dom": "^17.0.5",
+    "chakra-ui-markdown-renderer": "^3.0.1",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
     "marked": "^2.1.3",
