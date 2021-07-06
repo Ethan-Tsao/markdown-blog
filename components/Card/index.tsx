@@ -2,18 +2,12 @@ import React from "react";
 import {
   Box,
   Heading,
-  Link,
   Image,
   Text,
-  HStack,
-  Tag,
   useColorModeValue,
-  Container,
   LinkBox,
   LinkOverlay,
-  Flex,
 } from "@chakra-ui/react";
-import { BlogAuthor } from "./BlogAuthor";
 
 interface Frontmatter {
   title: string;
@@ -45,7 +39,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
       boxShadow="2xl"
       paddingBottom={{ base: "1", sm: "5" }}
       bg={bgMode}
-      w="85%"
+      w="100%"
       h={{ base: "flex", lg: "30rem" }}
     >
       {/* blog post image box */}
@@ -77,15 +71,6 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
         marginTop={10}
         marginRight={3}
       >
-        {/* <HStack spacing={2}>
-            {post.tags.map((tag) => {
-              return (
-                <Tag size={"md"} variant="solid" colorScheme="blue" key={tag}>
-                  {tag}
-                </Tag>
-              );
-            })}
-          </HStack> */}
         <LinkBox>
           <LinkOverlay href={`blog/${post.slug}`} color={mode}>
             <Heading
@@ -106,12 +91,6 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
         >
           {post.frontmatter.excerpt}
         </Text>
-        {/* <Flex
-          alignContent="flex-end"
-          justifyContent={{ base: "center", md: "left" }}
-        >
-          <BlogAuthor name={post.author} date={new Date()} />
-        </Flex> */}
       </Box>
     </Box>
   );

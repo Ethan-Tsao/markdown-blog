@@ -340,7 +340,7 @@ const NAV_ITEMS: Array<NavItem> = [
       },
       {
         label: "Books",
-        href: "/blog",
+        href: "/book-blog",
       },
     ],
   },
@@ -350,6 +350,6 @@ const NAV_ITEMS: Array<NavItem> = [
   // },
   {
     label: "About Me",
-    href: "#",
+    href: "about",
   },
 ];

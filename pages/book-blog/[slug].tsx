@@ -45,7 +45,7 @@ const PostPage: React.FC<Props> = ({
         <Image w="100%" src={cover_image} my={8} />
       </Flex>
       <Box color={mode}>
-        <ReactMarkdown components={ChakraUIRenderer()} children={content} />;
+        <ReactMarkdown components={ChakraUIRenderer()} children={content} />
       </Box>
     </Box>
   );
