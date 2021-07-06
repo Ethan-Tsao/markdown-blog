@@ -40,7 +40,11 @@ const About = () => {
         >
           <Stack flex={1} spacing={{ base: 5, md: 10 }} align={"center"} mb={3}>
             <Box>
-              <Image src="images/about/img1.jpg" rounded="full" />
+              <Image
+                src="images/about/img1.jpg"
+                rounded="full"
+                alt="picture of me :)"
+              />
             </Box>
             <Heading size="2xl">
               <Text>Ethan Tsao</Text>
@@ -49,6 +53,7 @@ const About = () => {
               <a
                 target="_blank"
                 href="https://www.youtube.com/channel/UCOREnmPcCxJBGjsdko-6-YA"
+                rel="noreferrer"
               >
                 <IconButton
                   aria-label="Youtube Link"
@@ -79,11 +84,11 @@ const About = () => {
           </Stack>
           <Stack flex={1} align={"flex-start"}>
             <Heading textAlign="left" size={"md"} lineHeight={"1.5"}>
-              Thanks for visiting my website! I'm Ethan, a 24 year old
+              Thanks for visiting my website! I&apos;m Ethan, a 24 year old
               half-Chinese, half-Korean dude that was born and raised in Texas.
               I went to LMU, a private school in LA, and studied electrical
               engineering and I am currently a software engineer at AT&T But
-              that's what I am, not who I am. I am a{" "}
+              that&apos;s what I am, not who I am. I am a{" "}
               <Typed
                 strings={typedStrings}
                 typeSpeed={30}

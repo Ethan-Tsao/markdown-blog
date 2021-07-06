@@ -38,7 +38,7 @@ const PostPage: React.FC<Props> = ({
   return (
     <Box maxW="65%" mx="auto" px={{ base: "6", lg: "8" }}>
       <Navbar />
-      <Link href="/book-blog">
+      <Link href="/book-blog" passHref>
         <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
           <FaArrowLeft />
           Back to Book Blog
@@ -51,7 +51,7 @@ const PostPage: React.FC<Props> = ({
         <Heading as="h3" size="lg" py={5} textAlign="left" color={mode}>
           {date}
         </Heading>
-        <Image w="100%" src={cover_image} my={8} />
+        <Image w="100%" src={cover_image} my={8} alt="cover-image" />
       </Flex>
       <Box color={mode}>
         <ReactMarkdown components={ChakraUIRenderer()} children={content} />

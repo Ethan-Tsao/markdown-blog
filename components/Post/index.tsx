@@ -20,7 +20,7 @@ interface IIPost {
 const Post: React.FC<IIPost> = ({ post }: IIPost) => {
   return (
     <div>
-      <img src={post.frontmatter.cover_image}></img>
+      <img src={post.frontmatter.cover_image} alt="cover-image"></img>
       <div>Posted on {post.frontmatter.date}</div>
       <h3>{post.frontmatter.title}</h3>
       <p>{post.frontmatter.excerpt}</p>
