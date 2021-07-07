@@ -6,6 +6,8 @@ import {
   Image,
   useColorModeValue,
   IconButton,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import { FaYoutube, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import Navbar from "components/Navbar";
@@ -50,36 +52,49 @@ const About = () => {
               <Text>Ethan Tsao</Text>
             </Heading>
             <Stack direction={"row"} spacing={10}>
-              <a
-                target="_blank"
-                href="https://www.youtube.com/channel/UCOREnmPcCxJBGjsdko-6-YA"
-                rel="noreferrer"
-              >
-                <IconButton
-                  aria-label="Youtube Link"
-                  icon={<FaYoutube />}
-                  variant="transparent"
-                  fontSize="3xl"
-                />
-              </a>
-              <IconButton
-                aria-label="LinkedIn Link"
-                icon={<FaLinkedin />}
-                variant="transparent"
-                fontSize="3xl"
-              />
-              <IconButton
-                aria-label="Instagram Link"
-                icon={<FaInstagram />}
-                variant="transparent"
-                fontSize="3xl"
-              />
-              <IconButton
-                aria-label="Twitter Link"
-                icon={<FaTwitter />}
-                variant="transparent"
-                fontSize="3xl"
-              />
+              <LinkBox>
+                <LinkOverlay href="https://www.youtube.com/channel/UCOREnmPcCxJBGjsdko-6-YA">
+                  <IconButton
+                    aria-label="Youtube Link"
+                    icon={<FaYoutube />}
+                    variant="transparent"
+                    fontSize="3xl"
+                  />
+                </LinkOverlay>
+              </LinkBox>
+
+              <LinkBox>
+                <LinkOverlay href="https://www.linkedin.com/in/ethantsao/">
+                  <IconButton
+                    aria-label="LinkedIn Link"
+                    icon={<FaLinkedin />}
+                    variant="transparent"
+                    fontSize="3xl"
+                  />
+                </LinkOverlay>
+              </LinkBox>
+
+              <LinkBox>
+                <LinkOverlay href="https://www.instagram.com/ethan_not_aight/">
+                  <IconButton
+                    aria-label="Instagram Link"
+                    icon={<FaInstagram />}
+                    variant="transparent"
+                    fontSize="3xl"
+                  />
+                </LinkOverlay>
+              </LinkBox>
+
+              <LinkBox>
+                <LinkOverlay href="https://twitter.com/ethan_aight">
+                  <IconButton
+                    aria-label="Twitter Link"
+                    icon={<FaTwitter />}
+                    variant="transparent"
+                    fontSize="3xl"
+                  />
+                </LinkOverlay>
+              </LinkBox>
             </Stack>
           </Stack>
           <Stack flex={1} align={"flex-start"}>
