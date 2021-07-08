@@ -328,15 +328,15 @@ const NAV_ITEMS: Array<NavItem> = [
     children: [
       {
         label: "Mechanical Keyboards",
-        href: "#",
+        href: "/mech-blog",
       },
       {
         label: "Programming",
-        href: "#",
+        href: "/programming-blog",
       },
       {
         label: "Video Games",
-        href: "#",
+        href: "/game-blog",
       },
       {
         label: "Books",
@@ -350,6 +350,6 @@ const NAV_ITEMS: Array<NavItem> = [
   // },
   {
     label: "About Me",
-    href: "about",
+    href: "/about",
   },
 ];

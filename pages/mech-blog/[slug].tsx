@@ -1,19 +1,21 @@
-/* eslint-disable react/no-children-prop */
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import React, { PropsWithChildren, ReactChildren } from "react";
+import React from "react";
 import Navbar from "components/Navbar";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import {
   Box,
   Flex,
   Heading,
   useColorModeValue,
   Image,
+  Button,
   Text,
 } from "@chakra-ui/react";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import { FaArrowLeft } from "react-icons/fa";
+import Link from "next/link";
 
 interface Frontmatter {
   title: string;
@@ -36,20 +38,24 @@ const PostPage: React.FC<Props> = ({
   return (
     <Box maxW="65%" mx="auto" px={{ base: "6", lg: "8" }}>
       <Navbar />
-      <Flex margin={4} flexDirection="column" px={{ base: "6", lg: "8" }}>
+      <Link href="/mech-blog" passHref>
+        <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
+          <FaArrowLeft />
+          Back to Mechanical Keyboard Blog
+        </Button>
+      </Link>
+      <Flex flexDirection="column" px={{ base: "6", lg: "8" }}>
         <Heading as="h1" size="2xl" py={5} textAlign="left" color={mode}>
           {title}
         </Heading>
         <Heading as="h3" size="lg" py={5} textAlign="left" color={mode}>
           {date}
         </Heading>
-        <Image w="100%" src={cover_image} my={8} alt="cover_image" />
+        <Image w="100%" src={cover_image} my={8} alt="cover-image" />
       </Flex>
-      <ReactMarkdown
-        children={content}
-        components={ChakraUIRenderer()}
-        skipHtml={false}
-      />
+      <Box color={mode}>
+        <ReactMarkdown components={ChakraUIRenderer()} children={content} />
+      </Box>
     </Box>
   );
 };
@@ -64,7 +70,7 @@ type Params = {
 };
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join("posts/mech-posts"));
 
   const paths = files.map((filename) => ({
     params: {
@@ -80,7 +86,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }: Params) {
   const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".md"),
+    path.join("posts/mech-posts", slug + ".md"),
     "utf-8"
   );
 

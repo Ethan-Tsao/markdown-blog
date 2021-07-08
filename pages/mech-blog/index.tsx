@@ -45,13 +45,13 @@ const BlogPage: React.FC<Props> = ({ posts }) => {
 export default BlogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync(path.join("posts/book-posts"));
+  const files = fs.readdirSync(path.join("posts/mech-posts"));
 
   const posts = files.map((filename) => {
     const slug = filename.replace(".md", "");
 
     const markdownWithMeta = fs.readFileSync(
-      path.join("posts/book-posts", filename),
+      path.join("posts/mech-posts", filename),
       "utf-8"
     );
 

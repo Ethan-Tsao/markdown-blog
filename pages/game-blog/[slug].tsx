@@ -38,10 +38,10 @@ const PostPage: React.FC<Props> = ({
   return (
     <Box maxW="65%" mx="auto" px={{ base: "6", lg: "8" }}>
       <Navbar />
-      <Link href="/book-blog" passHref>
+      <Link href="/game-blog" passHref>
         <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
           <FaArrowLeft />
-          Back to Book Blog
+          Back to Video Game Blog
         </Button>
       </Link>
       <Flex flexDirection="column" px={{ base: "6", lg: "8" }}>
@@ -70,7 +70,7 @@ type Params = {
 };
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("posts/book-posts"));
+  const files = fs.readdirSync(path.join("posts/game-posts"));
 
   const paths = files.map((filename) => ({
     params: {
@@ -86,7 +86,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }: Params) {
   const markdownWithMeta = fs.readFileSync(
-    path.join("posts/book-posts", slug + ".md"),
+    path.join("posts/game-posts", slug + ".md"),
     "utf-8"
   );
 
