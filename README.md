@@ -14,6 +14,12 @@ Me, Ethan Tsao
 
 ## Dev Notes
 
+### Fonts
+
+- Caveat
+- Righteous
+- Permanent Marker
+
 ### To Do
 
 - Portfolio

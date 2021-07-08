@@ -13,6 +13,9 @@
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@fontsource/caveat": "^4.5.0",
+    "@fontsource/caveat-brush": "^4.5.0",
+    "@fontsource/permanent-marker": "^4.5.0",
     "@types/next": "^9.0.0",
     "@types/node": "^15.6.1",
     "@types/pg": "^8.6.0",
@@ -25,7 +28,8 @@
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
     "react-markdown": "^6.0.2",
-    "react-typed": "^1.2.0"
+    "react-typed": "^1.2.0",
+    "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "17.0.13",

@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   LinkBox,
   LinkOverlay,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
@@ -15,6 +16,7 @@ interface Frontmatter {
   date: string;
   cover_image: string;
   excerpt: string;
+  video: string;
 }
 
 interface IPost {
@@ -27,7 +29,7 @@ interface IIPost {
 }
 
 const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
-  const bgMode = useColorModeValue("solarizedLight.400", "solarizedDark.600");
+  const bgMode = useColorModeValue("solarizedLight.400", "solarizedDark.500");
   const mode = useColorModeValue("solarizedDark.600", "solarizedLight.400");
   const router = useRouter();
   const route = router.pathname;
@@ -44,7 +46,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
           paddingBottom={{ base: "1", sm: "5" }}
           bg={bgMode}
           w="100%"
-          h={{ base: "flex", lg: "30rem" }}
+          h={{ base: "flex", xl: "30rem" }}
         >
           {/* blog post image box */}
           <Box display="flex" flex="1" position="relative" alignItems="center">
@@ -56,12 +58,23 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
             >
               <LinkBox>
                 <LinkOverlay href={`${route}/${post.slug}`}>
-                  <Image
-                    borderRadius="lg"
-                    src={post.frontmatter.cover_image}
-                    alt="some good alt text"
-                    objectFit="contain"
-                  />
+                  {post.frontmatter.video != "none" && (
+                    <AspectRatio
+                      ratio={16 / 9}
+                      w={{ base: "95%", xl: "500px" }}
+                    >
+                      <iframe src={post.frontmatter.video} />
+                    </AspectRatio>
+                  )}
+                  {post.frontmatter.cover_image != "none" && (
+                    <Image
+                      borderRadius="lg"
+                      src={post.frontmatter.cover_image}
+                      alt="some good alt text"
+                      objectFit="contain"
+                      w={{ base: "95%" }}
+                    />
+                  )}
                 </LinkOverlay>
               </LinkBox>
             </Box>

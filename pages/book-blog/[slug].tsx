@@ -12,11 +12,11 @@ import {
   useColorModeValue,
   Image,
   Button,
-  Text,
   AspectRatio,
 } from "@chakra-ui/react";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
+import Markdown from "components/Markdown";
 
 interface Frontmatter {
   title: string;
@@ -67,7 +67,8 @@ const PostPage: React.FC<Props> = ({
         )}
       </Flex>
       <Box color={mode}>
-        <ReactMarkdown components={ChakraUIRenderer()} children={content} />
+        {/* <ReactMarkdown components={ChakraUIRenderer()} children={content} /> */}
+        <Markdown text={content} />
       </Box>
     </Box>
   );

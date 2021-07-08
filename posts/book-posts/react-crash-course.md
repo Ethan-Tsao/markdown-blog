@@ -3,7 +3,7 @@ title: "React Crash Course"
 date: "March 8, 2021"
 excerpt: "Crash course to learn the React JavaScript library. We will look at components, hooks and more"
 cover_image: "/images/posts/img5.jpg"
-video: "https://www.youtube.com/embed/4MbqdxYozX4"
+video: "none"
 ---
 
 Lorem markdownum fine incustoditam unda factura versum occuluere Aeneas, iuvat
