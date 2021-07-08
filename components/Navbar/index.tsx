@@ -293,32 +293,17 @@ interface NavItem {
 }
 
 const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Portfolio",
-    // children: [
-    //   {
-    //     label: "Explore Design Work",
-    //     subLabel: "Trending Design to inspire you",
-    //     href: "#",
-    //   },
-    //   {
-    //     label: "New & Noteworthy",
-    //     subLabel: "Up-and-coming Designers",
-    //     href: "#",
-    //   },
-    // ],
-  },
   // {
-  //   label: "Mechanical Keyboards",
+  //   label: "Portfolio",
   //   children: [
   //     {
-  //       label: "Job Board",
-  //       subLabel: "Find your dream design job",
+  //       label: "Explore Design Work",
+  //       subLabel: "Trending Design to inspire you",
   //       href: "#",
   //     },
   //     {
-  //       label: "Freelance Projects",
-  //       subLabel: "An exclusive list for contract work",
+  //       label: "New & Noteworthy",
+  //       subLabel: "Up-and-coming Designers",
   //       href: "#",
   //     },
   //   ],
@@ -344,10 +329,6 @@ const NAV_ITEMS: Array<NavItem> = [
       },
     ],
   },
-  // {
-  //   label: "Programming",
-  //   href: "#",
-  // },
   {
     label: "About Me",
     href: "/about",

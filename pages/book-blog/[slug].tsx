@@ -13,6 +13,7 @@ import {
   Image,
   Button,
   Text,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
@@ -21,6 +22,7 @@ interface Frontmatter {
   title: string;
   date: string;
   cover_image: string;
+  video: string;
 }
 
 interface Props {
@@ -30,13 +32,17 @@ interface Props {
 }
 
 const PostPage: React.FC<Props> = ({
-  frontmatter: { title, date, cover_image },
+  frontmatter: { title, date, cover_image, video },
   slug,
   content,
 }) => {
   const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
   return (
-    <Box maxW="65%" mx="auto" px={{ base: "6", lg: "8" }}>
+    <Box
+      maxW={{ base: "90%", lg: "65%" }}
+      mx="auto"
+      px={{ base: "6", lg: "8" }}
+    >
       <Navbar />
       <Link href="/book-blog" passHref>
         <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
@@ -51,7 +57,14 @@ const PostPage: React.FC<Props> = ({
         <Heading as="h3" size="lg" py={5} textAlign="left" color={mode}>
           {date}
         </Heading>
-        <Image w="100%" src={cover_image} my={8} alt="cover-image" />
+        {video != "none" && (
+          <AspectRatio ratio={16 / 9} mb={5}>
+            <iframe src={video} />
+          </AspectRatio>
+        )}
+        {cover_image != "none" && (
+          <Image w="100%" src={cover_image} my={8} alt="cover-image" />
+        )}
       </Flex>
       <Box color={mode}>
         <ReactMarkdown components={ChakraUIRenderer()} children={content} />
