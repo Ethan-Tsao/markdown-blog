@@ -20,9 +20,9 @@ const theme = extendTheme({
       },
     }),
   },
-  fonts: {
-    heading: "Caveat",
-  },
+  // fonts: {
+  //   heading: "Caveat",
+  // },
   colors: {
     solarizedDark: {
       800: "#052830",

@@ -31,3 +31,4 @@ Me, Ethan Tsao
 ## Resources
 
 [Awesome React Components](https://github.com/brillout/awesome-react-components)
+[Three.js Ripple Animation](https://github.com/Claeb101/3d-ripple-animation/blob/main/src/App.js)

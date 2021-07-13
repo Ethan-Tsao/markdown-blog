@@ -37,7 +37,6 @@ export default function Navbar() {
   return (
     <Box py={3}>
       <Flex
-        bg={bgMode}
         color={mode}
         minH={"60px"}
         py={{ base: 2 }}
