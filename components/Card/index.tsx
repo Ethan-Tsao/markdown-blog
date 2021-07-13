@@ -34,7 +34,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
   const router = useRouter();
   const route = router.pathname;
   return (
-    <LinkBox>
+    <LinkBox minWidth="100%">
       <LinkOverlay href={`${route}/${post.slug}`}>
         <Box
           marginTop={{ base: "1", sm: "5" }}
@@ -45,13 +45,13 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
           boxShadow="2xl"
           paddingBottom={{ base: "1", sm: "5" }}
           bg={bgMode}
-          w="100%"
+          minWidth="100%"
           h={{ base: "flex", xl: "30rem" }}
         >
           {/* blog post image box */}
           <Box display="flex" flex="1" position="relative" alignItems="center">
             <Box
-              width={{ base: "100%", sm: "85%" }}
+              w={{ base: "100%", sm: "85%" }}
               zIndex="2"
               marginLeft={{ base: "0", sm: "5%" }}
               marginTop="5%"
@@ -59,10 +59,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
               <LinkBox>
                 <LinkOverlay href={`${route}/${post.slug}`}>
                   {post.frontmatter.video != "none" && (
-                    <AspectRatio
-                      ratio={16 / 9}
-                      w={{ base: "95%", xl: "500px" }}
-                    >
+                    <AspectRatio ratio={16 / 9}>
                       <iframe src={post.frontmatter.video} />
                     </AspectRatio>
                   )}

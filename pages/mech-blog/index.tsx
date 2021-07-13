@@ -5,13 +5,14 @@ import React from "react";
 import { GetStaticProps } from "next";
 import BlogCard from "components/Card";
 import Navbar from "components/Navbar";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue, Heading } from "@chakra-ui/react";
 
 interface Frontmatter {
   title: string;
   date: string;
   cover_image: string;
   excerpt: string;
+  video: string;
 }
 
 interface IPost {
@@ -25,12 +26,14 @@ interface Props {
 }
 
 const BlogPage: React.FC<Props> = ({ posts }) => {
+  const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
   return (
     <Box
       maxW={{ base: "90%", lg: "65%" }}
       mx="auto"
       px={{ base: "6", lg: "8" }}
       align="center"
+      color={mode}
     >
       <Navbar />
       <Flex flexDirection="column" alignItems="center">
@@ -38,6 +41,7 @@ const BlogPage: React.FC<Props> = ({ posts }) => {
           <BlogCard key={post.slug} post={post} />
         ))}
       </Flex>
+      <Heading>Don&apos;t worry! There&apos;s always more to come! ;)</Heading>
     </Box>
   );
 };

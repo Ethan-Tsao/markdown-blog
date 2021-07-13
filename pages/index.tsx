@@ -1,4 +1,15 @@
-import { Box, Stack, Text, useColorModeValue, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  Text,
+  useColorModeValue,
+  Heading,
+  SimpleGrid,
+  Divider,
+  LinkBox,
+  LinkOverlay,
+  Flex,
+} from "@chakra-ui/react";
 import Navbar from "components/Navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
 
@@ -11,23 +22,30 @@ const Home = () => {
       mx="auto"
       px={{ base: "6", lg: "8" }}
       align="center"
+      color={mode}
     >
+      {/* Heading */}
       <Navbar />
-      <Heading color={mode} textAlign="left" size="4xl" mt="2rem">
-        <Text>Hi, I'm Ethan</Text>
-      </Heading>
-      <Heading color={mode} textAlign="left" size="xl">
-        <Text>You don't know me yet but you will soon</Text>
-      </Heading>
-      <Heading color={mode} textAlign="center" size="2xl" mt="5rem">
-        <Text>My Testimonials</Text>
+      <Box alignContent="center">
+        <Heading textAlign="left" size="4xl" mt="5rem">
+          Hi, I&apos;m Ethan
+        </Heading>
+        <Heading textAlign="left" size="xl">
+          You don&apos;t know me yet but you will soon
+        </Heading>
+      </Box>
+
+      {/* <Divider /> */}
+
+      {/* Testimonials */}
+      <Heading textAlign="center" size="2xl" mt="5rem">
+        My Testimonials
       </Heading>
       <Stack
         align={"center"}
         justifyContent={"space-between"}
         direction={{ base: "column", md: "row" }}
         spacing="3em"
-        color={mode}
         my={5}
       >
         <Stack
@@ -39,8 +57,8 @@ const Home = () => {
           w={{ base: "100%", sm: "30rem" }}
         >
           <Text fontSize={{ base: "xl", md: "2xl" }}>
-            He's the hardest working and most diligent person I've ever met.
-            Definitely my favorite child.
+            He&apos;s the hardest working and most diligent person I&apos;ve
+            ever met. Definitely my favorite child.
           </Text>
           <Text>- My Mom (probably(not))</Text>
         </Stack>
@@ -53,8 +71,8 @@ const Home = () => {
           w={{ base: "100%", sm: "30rem" }}
         >
           <Text fontSize={{ base: "xl", md: "2xl" }}>
-            Honestly, I've never met anyone funnier. His memes are top notch and
-            he's always quick with a joke
+            Honestly, I&apos;ve never met anyone funnier. His memes are top
+            notch and he&apos;s always quick with a joke
           </Text>
           <Text>- My best friend (definitely)</Text>
         </Stack>
