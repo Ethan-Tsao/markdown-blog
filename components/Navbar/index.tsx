@@ -7,7 +7,7 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
+  Link as ChakraLink,
   LinkBox,
   LinkOverlay,
   Popover,
@@ -27,6 +27,7 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import { DarkModeToggle } from "components/DarkModeToggle";
+import Link from "next/link";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -119,7 +120,8 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              {/* <Link href={navItem.href ?? "#"} passHref> */}
+              <ChakraLink
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"md"}
@@ -130,8 +132,10 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}
               >
-                {navItem.label}
-              </Link>
+                <Link href={navItem.href ?? "#"} passHref>
+                  {navItem.label}
+                </Link>
+              </ChakraLink>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -168,49 +172,51 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 
   return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{
-        bg: linkHoverMode,
-      }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
+    <Link href={href ?? "#"} passHref>
+      <ChakraLink
+        // href={href}
+        role={"group"}
+        display={"block"}
+        p={2}
+        rounded={"md"}
+        _hover={{
+          bg: linkHoverMode,
+        }}
+      >
+        <Stack direction={"row"} align={"center"}>
+          <Box>
+            <Text
+              transition={"all .3s ease"}
+              _groupHover={{
+                color: groupHoverMode,
+              }}
+              fontWeight={500}
+              align={"left"}
+            >
+              {label}
+            </Text>
+            <Text
+              fontSize={"sm"}
+              _groupHover={{
+                color: groupHoverMode,
+              }}
+            >
+              {subLabel}
+            </Text>
+          </Box>
+          <Flex
             transition={"all .3s ease"}
-            _groupHover={{
-              color: groupHoverMode,
-            }}
-            fontWeight={500}
-            align={"left"}
+            transform={"translateX(-10px)"}
+            opacity={0}
+            _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+            justify={"flex-end"}
+            align={"center"}
+            flex={1}
           >
-            {label}
-          </Text>
-          <Text
-            fontSize={"sm"}
-            _groupHover={{
-              color: groupHoverMode,
-            }}
-          >
-            {subLabel}
-          </Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={groupHoverMode} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
+            <Icon color={groupHoverMode} w={5} h={5} as={ChevronRightIcon} />
+          </Flex>
+        </Stack>
+      </ChakraLink>
     </Link>
   );
 };
@@ -234,7 +240,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
+        as={ChakraLink}
         href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
@@ -268,15 +274,16 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link
+              <ChakraLink
                 key={child.label}
                 py={2}
-                href={child.href}
                 color={mode}
                 fontWeight="semibold"
               >
-                {child.label}
-              </Link>
+                <Link href={child.href ?? "#"} passHref>
+                  {child.label}
+                </Link>
+              </ChakraLink>
             ))}
         </Stack>
       </Collapse>
@@ -327,6 +334,7 @@ const NAV_ITEMS: Array<NavItem> = [
         href: "/book-blog",
       },
     ],
+    href: "#",
   },
   {
     label: "About Me",

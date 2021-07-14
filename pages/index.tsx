@@ -42,7 +42,11 @@ const Home = () => {
         </Box>
         <Box>
           <AspectRatio ratio={3 / 4} maxW="90%">
-            <Image src="images/home/me.jpg" objectFit="cover" />
+            <Image
+              src="images/home/me.jpg"
+              objectFit="cover"
+              alt="that's me :)"
+            />
           </AspectRatio>
         </Box>
       </SimpleGrid>
