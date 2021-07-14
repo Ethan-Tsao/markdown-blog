@@ -3,9 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import React from "react";
 import { GetStaticProps } from "next";
-import BlogCard from "components/Card";
-import Navbar from "components/Navbar";
-import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
+import BlogPage from "components/Pages/BlogPage";
 
 interface Frontmatter {
   title: string;
@@ -25,27 +23,8 @@ interface Props {
   posts: IPost[];
 }
 
-const BlogPage: React.FC<Props> = ({ posts }) => {
-  const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
-  return (
-    <Box
-      maxW={{ base: "90%", lg: "65%" }}
-      mx="auto"
-      px={{ base: "6", lg: "8" }}
-      align="center"
-      color={mode}
-    >
-      <Navbar />
-      <Flex flexDirection="column" alignItems="center">
-        {posts.map((post: IPost) => (
-          <BlogCard key={post.slug} post={post} />
-        ))}
-        <Heading>
-          Don&apos;t worry! There&apos;s always more to come! ;)
-        </Heading>
-      </Flex>
-    </Box>
-  );
+const GameBlogPage: React.FC<Props> = ({ posts }: Props) => {
+  return <BlogPage posts={posts} />;
 };
 
 export default BlogPage;

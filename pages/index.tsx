@@ -60,7 +60,7 @@ const Home = () => {
             He&apos;s the hardest working and most diligent person I&apos;ve
             ever met. Definitely my favorite child.
           </Text>
-          <Text>- My Mom (probably(not))</Text>
+          <Text py={"2rem"}>- My Mom (probably(not))</Text>
         </Stack>
         <Stack
           dir={"column"}
@@ -74,7 +74,7 @@ const Home = () => {
             Honestly, I&apos;ve never met anyone funnier. His memes are top
             notch and he&apos;s always quick with a joke
           </Text>
-          <Text>- My best friend (definitely)</Text>
+          <Text py={"2rem"}>- My best friend (definitely)</Text>
         </Stack>
         <Stack
           dir={"column"}
@@ -85,9 +85,9 @@ const Home = () => {
           w={{ base: "100%", sm: "30rem" }}
         >
           <Text fontSize={{ base: "xl", md: "2xl" }}>
-            I literally just met you. I know absolutely nothing about you.
+            Who the hell are you?
           </Text>
-          <Text>- Some random guy I met at McDonalds</Text>
+          <Text py={"2rem"}>- Some random guy I met at McDonalds</Text>
         </Stack>
       </Stack>
     </Box>
