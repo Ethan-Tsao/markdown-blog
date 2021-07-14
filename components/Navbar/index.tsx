@@ -120,7 +120,6 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              {/* <Link href={navItem.href ?? "#"} passHref> */}
               <ChakraLink
                 p={2}
                 href={navItem.href ?? "#"}
@@ -240,17 +239,17 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={ChakraLink}
-        href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
         }}
       >
-        <Text fontWeight={600} color={mode}>
-          {label}
-        </Text>
+        <Link href={href ?? "#"}>
+          <Text fontWeight={600} color={mode}>
+            {label}
+          </Text>
+        </Link>
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -259,6 +258,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             w={6}
             h={6}
             color={mode}
+            flex="flex-start"
           />
         )}
       </Flex>
