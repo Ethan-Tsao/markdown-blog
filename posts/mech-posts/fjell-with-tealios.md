@@ -12,7 +12,7 @@ video: "https://www.youtube.com/embed/cpTWPL3FTWY"
 
 # Overview
 
-The Mekanisk Fjell is certainly a high end luxury board by any standard although not at the super high end of mech prices. It's a 60% tray mount board made of aluminum with a gorgeous brass backplate. Unfortunately, I missed out on their signature ultramarine but the silver is still looks fantastic. It's a simple board that delivers on everything it promises.
+The Mekanisk Fjell is certainly a high-end luxury board by any standard although not at the super high end of mech prices. It's a 60% tray mount board made of aluminum with a gorgeous brass backplate. Unfortunately, I missed out on their signature ultramarine but the silver is still looks fantastic. It's a simple board that delivers on everything it promises.
 
 # Sound
 
