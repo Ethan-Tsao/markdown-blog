@@ -10,6 +10,7 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface Frontmatter {
   title: string;
@@ -34,81 +35,92 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
   const router = useRouter();
   const route = router.pathname;
   return (
-    <LinkBox minWidth="100%">
-      <LinkOverlay href={`${route}/${post.slug}`}>
-        <Box
-          marginTop={{ base: "1", sm: "5" }}
-          display="flex"
-          flexDirection={{ base: "column", md: "row" }}
-          justifyContent="center"
-          rounded={12}
-          boxShadow="2xl"
-          paddingBottom={{ base: "1", sm: "5" }}
-          bg={bgMode}
-          minWidth="100%"
-          h={{ base: "flex", xl: "30rem" }}
-        >
-          {/* blog post image box */}
-          <Box display="flex" flex="1" position="relative" alignItems="center">
+    <Link href={`${route}/${post.slug}`}>
+      <LinkBox minWidth="100%">
+        <LinkOverlay>
+          <Box
+            marginTop={{ base: "1", sm: "5" }}
+            display="flex"
+            flexDirection={{ base: "column", md: "row" }}
+            justifyContent="center"
+            rounded={12}
+            boxShadow="2xl"
+            paddingBottom={{ base: "1", sm: "5" }}
+            bg={bgMode}
+            color={mode}
+            minWidth="100%"
+            h={{ base: "flex", xl: "30rem" }}
+          >
+            {/* blog post image box */}
             <Box
-              w={{ base: "100%", sm: "85%" }}
-              zIndex="2"
-              marginLeft={{ base: "0", sm: "5%" }}
-              marginTop="5%"
+              display="flex"
+              flex="1"
+              position="relative"
+              alignItems="center"
             >
-              <LinkBox>
-                <LinkOverlay href={`${route}/${post.slug}`}>
-                  {post.frontmatter.video != "none" && (
-                    <AspectRatio ratio={16 / 9}>
-                      <iframe src={post.frontmatter.video} />
-                    </AspectRatio>
-                  )}
-                  {post.frontmatter.cover_image != "none" && (
-                    <Image
-                      borderRadius="lg"
-                      src={post.frontmatter.cover_image}
-                      alt="some good alt text"
-                      objectFit="contain"
-                      w={{ base: "95%" }}
-                    />
-                  )}
-                </LinkOverlay>
-              </LinkBox>
+              <Box
+                w={{ base: "100%", sm: "85%" }}
+                zIndex="2"
+                marginLeft={{ base: "0", sm: "5%" }}
+                marginTop="5%"
+              >
+                <Link href={`${route}/${post.slug}`}>
+                  <LinkBox>
+                    <LinkOverlay>
+                      {post.frontmatter.video != "none" && (
+                        <AspectRatio ratio={16 / 9}>
+                          <iframe src={post.frontmatter.video} />
+                        </AspectRatio>
+                      )}
+                      {post.frontmatter.cover_image != "none" && (
+                        <Image
+                          borderRadius="lg"
+                          src={post.frontmatter.cover_image}
+                          alt="some good alt text"
+                          objectFit="contain"
+                          w={{ base: "95%" }}
+                        />
+                      )}
+                    </LinkOverlay>
+                  </LinkBox>
+                </Link>
+              </Box>
+            </Box>
+            {/* blog info box */}
+            <Box
+              display="flex"
+              flex="1"
+              flexDirection="column"
+              alignContent={{ base: "center", md: "left" }}
+              marginTop={10}
+              marginRight={3}
+            >
+              <Link href={`${route}/${post.slug}`}>
+                <LinkBox>
+                  <LinkOverlay>
+                    <Heading
+                      marginTop="1"
+                      textAlign={{ base: "center", md: "left" }}
+                      size="2xl"
+                    >
+                      {post.frontmatter.title}
+                    </Heading>
+                  </LinkOverlay>
+                </LinkBox>
+              </Link>
+              <Text
+                as="p"
+                my="2"
+                fontSize={["md", "lg", "xl", "2xl"]}
+                textAlign={{ base: "center", md: "left" }}
+              >
+                {post.frontmatter.excerpt}
+              </Text>
             </Box>
           </Box>
-          {/* blog info box */}
-          <Box
-            display="flex"
-            flex="1"
-            flexDirection="column"
-            alignContent={{ base: "center", md: "left" }}
-            marginTop={10}
-            marginRight={3}
-          >
-            <LinkBox>
-              <LinkOverlay href={`${route}/${post.slug}`} color={mode}>
-                <Heading
-                  marginTop="1"
-                  textAlign={{ base: "center", md: "left" }}
-                  size="2xl"
-                >
-                  {post.frontmatter.title}
-                </Heading>
-              </LinkOverlay>
-            </LinkBox>
-            <Text
-              as="p"
-              my="2"
-              color={mode}
-              fontSize={["md", "lg", "xl", "2xl"]}
-              textAlign={{ base: "center", md: "left" }}
-            >
-              {post.frontmatter.excerpt}
-            </Text>
-          </Box>
-        </Box>
-      </LinkOverlay>
-    </LinkBox>
+        </LinkOverlay>
+      </LinkBox>
+    </Link>
   );
 };
 
