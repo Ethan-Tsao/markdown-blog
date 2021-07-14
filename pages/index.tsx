@@ -31,13 +31,9 @@ const Home = () => {
     >
       <Navbar />
       {/* Heading */}
-      <SimpleGrid columns={{ base: 1, xl: 2 }} h="80vh">
+      <SimpleGrid columns={{ base: 1, xl: 2 }} h="80vh" mt="2rem">
         <Box align="center" maxH="50%">
-          <Heading
-            textAlign="left"
-            size="4xl"
-            mt={{ base: "2rem", md: "5rem" }}
-          >
+          <Heading textAlign="left" size="4xl">
             Hi, I&apos;m Ethan
           </Heading>
           <Heading textAlign="left" size="xl">
@@ -64,7 +60,7 @@ const Home = () => {
         />
       </Box>
 
-      {/* <Divider /> */}
+      <Divider />
 
       {/* Testimonials */}
       <Box h="100vh">
