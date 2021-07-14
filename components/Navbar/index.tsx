@@ -7,7 +7,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   LinkBox,
   LinkOverlay,
   Popover,
@@ -27,6 +26,7 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import { DarkModeToggle } from "components/DarkModeToggle";
+import Link from "next/link";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -119,19 +119,22 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? "#"}
-                fontSize={"md"}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Link>
+              <LinkBox>
+                <LinkOverlay href={navItem.href ?? "#"}>
+                  <Text
+                    p={2}
+                    fontSize={"md"}
+                    fontWeight={500}
+                    color={linkColor}
+                    _hover={{
+                      textDecoration: "none",
+                      color: linkHoverColor,
+                    }}
+                  >
+                    {navItem.label}
+                  </Text>
+                </LinkOverlay>
+              </LinkBox>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -168,50 +171,53 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 
   return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{
-        bg: linkHoverMode,
-      }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{
-              color: groupHoverMode,
-            }}
-            fontWeight={500}
-            align={"left"}
-          >
-            {label}
-          </Text>
-          <Text
-            fontSize={"sm"}
-            _groupHover={{
-              color: groupHoverMode,
-            }}
-          >
-            {subLabel}
-          </Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
+    <LinkBox>
+      <LinkOverlay href={href ?? "#"}>
+        <Box
+          role={"group"}
+          display={"block"}
+          p={2}
+          rounded={"md"}
+          _hover={{
+            bg: linkHoverMode,
+          }}
         >
-          <Icon color={groupHoverMode} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
+          <Stack direction={"row"} align={"center"}>
+            <Box>
+              <Text
+                transition={"all .3s ease"}
+                _groupHover={{
+                  color: groupHoverMode,
+                }}
+                fontWeight={500}
+                align={"left"}
+              >
+                {label}
+              </Text>
+              <Text
+                fontSize={"sm"}
+                _groupHover={{
+                  color: groupHoverMode,
+                }}
+              >
+                {subLabel}
+              </Text>
+            </Box>
+            <Flex
+              transition={"all .3s ease"}
+              transform={"translateX(-10px)"}
+              opacity={0}
+              _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+              justify={"flex-end"}
+              align={"center"}
+              flex={1}
+            >
+              <Icon color={groupHoverMode} w={5} h={5} as={ChevronRightIcon} />
+            </Flex>
+          </Stack>
+        </Box>
+      </LinkOverlay>
+    </LinkBox>
   );
 };
 
@@ -232,30 +238,32 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? "#"}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text fontWeight={600} color={mode}>
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-            color={mode}
-          />
-        )}
-      </Flex>
+      <LinkBox>
+        <LinkOverlay href={href ?? "#"}>
+          <Flex
+            py={2}
+            justify={"space-between"}
+            align={"center"}
+            _hover={{
+              textDecoration: "none",
+            }}
+          >
+            <Text fontWeight={600} color={mode}>
+              {label}
+            </Text>
+            {children && (
+              <Icon
+                as={ChevronDownIcon}
+                transition={"all .25s ease-in-out"}
+                transform={isOpen ? "rotate(180deg)" : ""}
+                w={6}
+                h={6}
+                color={mode}
+              />
+            )}
+          </Flex>
+        </LinkOverlay>
+      </LinkBox>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
         <Stack
@@ -268,14 +276,15 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link
-                key={child.label}
-                py={2}
-                href={child.href}
-                color={mode}
-                fontWeight="semibold"
-              >
-                {child.label}
+              <Link href={child.href ?? "#"} key={child.href} passHref>
+                <Text
+                  key={child.label}
+                  py={2}
+                  color={mode}
+                  fontWeight="semibold"
+                >
+                  {child.label}
+                </Text>
               </Link>
             ))}
         </Stack>
