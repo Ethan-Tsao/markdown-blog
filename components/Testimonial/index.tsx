@@ -27,7 +27,7 @@ const Testimonial = ({ body, credit }: Props) => {
         boxShadow={"2xl"}
         rounded={"lg"}
         p={6}
-        minH={{ sm: "xs" }}
+        minH={{ md: "lg", lg: "2xl", xl: "xs" }}
         textAlign="center"
         align="center"
       >
