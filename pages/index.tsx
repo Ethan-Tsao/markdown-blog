@@ -15,6 +15,7 @@ import {
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Navbar from "components/Navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
+import Testimonial from "components/Testimonial";
 
 export const MotionChevron = motion(ChevronDownIcon);
 
@@ -68,9 +69,37 @@ const Home = () => {
       </Box>
 
       <Divider />
-
-      {/* Testimonials */}
       <Box h="100vh">
+        <Heading textAlign="center" size="2xl" my="2rem">
+          My Testimonials
+        </Heading>
+        <Stack
+          align={"center"}
+          justifyContent={{ base: "center", xl: "space-between" }}
+          justify="center"
+          direction={{ base: "column", md: "row" }}
+          spacing={{ base: "1", md: "3em" }}
+          my={5}
+          w="100%"
+        >
+          <Testimonial
+            body="He's the hardest working and most diligent person I've
+              ever met. Definitely my favorite child."
+            credit="My Mom (probably(not))"
+          />
+          <Testimonial
+            body="Honestly, I've never met anyone funnier. His memes are top
+              notch and he's always quick with a joke"
+            credit="My best friend (definitely)"
+          />
+          <Testimonial
+            body="Who the hell are you?"
+            credit="Some random guy I met at McDonalds"
+          />
+        </Stack>
+      </Box>
+      {/* Testimonials */}
+      {/* <Box h="100vh">
         <Heading textAlign="center" size="2xl" my="2rem">
           My Testimonials
         </Heading>
@@ -124,7 +153,7 @@ const Home = () => {
             <Text py={"1rem"}>- Some random guy I met at McDonalds</Text>
           </Stack>
         </Stack>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
