@@ -22,11 +22,10 @@ Me, Ethan Tsao
 
 ### To Do
 
-- Portfolio
 - Blog Pages
 - Sidebar on some pages?
-- Cypress testing
-- Twitter integration
+- SEO optimization (meta, head, etc.)
+- performance optimization
 
 ## Resources
 

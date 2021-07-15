@@ -120,21 +120,21 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <ChakraLink
+              <Box
                 p={2}
-                href={navItem.href ?? "#"}
                 fontSize={"md"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
+                  cursor: "pointer",
                 }}
               >
                 <Link href={navItem.href ?? "#"} passHref>
                   {navItem.label}
                 </Link>
-              </ChakraLink>
+              </Box>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -171,38 +171,37 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 
   return (
-    <Link href={href ?? "#"} passHref>
-      <ChakraLink
-        // href={href}
-        role={"group"}
-        display={"block"}
-        p={2}
-        rounded={"md"}
-        _hover={{
-          bg: linkHoverMode,
-        }}
-      >
+    <Box
+      href={href}
+      role={"group"}
+      display={"block"}
+      p={2}
+      rounded={"md"}
+      _hover={{
+        bg: linkHoverMode,
+        cursor: "pointer",
+      }}
+    >
+      <Link href={href ?? "#"} passHref>
         <Stack direction={"row"} align={"center"}>
-          <Box>
-            <Text
-              transition={"all .3s ease"}
-              _groupHover={{
-                color: groupHoverMode,
-              }}
-              fontWeight={500}
-              align={"left"}
-            >
-              {label}
-            </Text>
-            <Text
-              fontSize={"sm"}
-              _groupHover={{
-                color: groupHoverMode,
-              }}
-            >
-              {subLabel}
-            </Text>
-          </Box>
+          <Text
+            transition={"all .3s ease"}
+            _groupHover={{
+              color: groupHoverMode,
+            }}
+            fontWeight={500}
+            align={"left"}
+          >
+            {label}
+          </Text>
+          <Text
+            fontSize={"sm"}
+            _groupHover={{
+              color: groupHoverMode,
+            }}
+          >
+            {subLabel}
+          </Text>
           <Flex
             transition={"all .3s ease"}
             transform={"translateX(-10px)"}
@@ -215,8 +214,8 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             <Icon color={groupHoverMode} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
-      </ChakraLink>
-    </Link>
+      </Link>
+    </Box>
   );
 };
 
@@ -245,7 +244,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: "none",
         }}
       >
-        <Link href={href ?? "#"}>
+        <Link href={href ?? "#"} passHref>
           <Text fontWeight={600} color={mode}>
             {label}
           </Text>
@@ -274,16 +273,11 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <ChakraLink
-                key={child.label}
-                py={2}
-                color={mode}
-                fontWeight="semibold"
-              >
+              <Box key={child.label} py={2} color={mode} fontWeight="semibold">
                 <Link href={child.href ?? "#"} passHref>
                   {child.label}
                 </Link>
-              </ChakraLink>
+              </Box>
             ))}
         </Stack>
       </Collapse>
