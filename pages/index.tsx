@@ -32,7 +32,7 @@ const Home = () => {
     >
       <Navbar />
       {/* Heading */}
-      <SimpleGrid columns={{ base: 1, xl: 2 }} h="80vh" mt="2rem">
+      <SimpleGrid columns={{ base: 1, xl: 2 }} mt="4rem">
         <Box align="center" maxH="50%">
           <Heading textAlign="left" size="4xl">
             Hi, I&apos;m Ethan
@@ -41,10 +41,11 @@ const Home = () => {
             You don&apos;t know me yet but you will soon
           </Heading>
         </Box>
-        <Box>
+        <Box my={{ base: "1rem" }}>
           <AspectRatio
             ratio={3 / 4}
             maxW={{ base: "80%", sm: "60%", md: "50%", xl: "90%" }}
+            padding="1"
           >
             <Image
               src="images/home/me.jpg"
@@ -54,7 +55,7 @@ const Home = () => {
           </AspectRatio>
         </Box>
       </SimpleGrid>
-      <Box justifyItems="center" h="20vh">
+      <Box justifyItems="center">
         <MotionChevron
           h="10"
           w="10"
@@ -68,7 +69,7 @@ const Home = () => {
         />
       </Box>
 
-      <Divider />
+      <Divider mt={5} />
       <Box h="100vh">
         <Heading textAlign="center" size="2xl" my="2rem">
           My Testimonials
