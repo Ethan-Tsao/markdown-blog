@@ -41,7 +41,10 @@ const Home = () => {
           </Heading>
         </Box>
         <Box>
-          <AspectRatio ratio={3 / 4} maxW="90%">
+          <AspectRatio
+            ratio={3 / 4}
+            maxW={{ base: "80%", sm: "50%", xl: "90%" }}
+          >
             <Image
               src="images/home/me.jpg"
               objectFit="cover"
