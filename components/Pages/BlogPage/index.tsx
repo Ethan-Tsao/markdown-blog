@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BlogCard from "components/Card";
 import { Navbar } from "components/Navbar";
 import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
