@@ -16,6 +16,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Navbar } from "components/Navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
 import Testimonial from "components/Testimonial";
+import Head from "components/Head";
 
 export const MotionChevron = motion(ChevronDownIcon);
 
@@ -30,6 +31,7 @@ const Home = () => {
       align="center"
       color={mode}
     >
+      <Head title="Home" />
       <Navbar />
       {/* Heading */}
       <SimpleGrid columns={{ base: 1, xl: 2 }} mt="4rem">
@@ -70,6 +72,7 @@ const Home = () => {
       </Box>
 
       <Divider mt={5} />
+
       <Box h="100vh">
         <Heading textAlign="center" size="2xl" my="2rem">
           My Testimonials
@@ -99,62 +102,6 @@ const Home = () => {
           />
         </Stack>
       </Box>
-      {/* Testimonials */}
-      {/* <Box h="100vh">
-        <Heading textAlign="center" size="2xl" my="2rem">
-          My Testimonials
-        </Heading>
-        <Stack
-          align={"center"}
-          justifyContent={{ base: "center", xl: "space-between" }}
-          justify="center"
-          direction={{ base: "column", md: "row" }}
-          spacing="3em"
-          my={5}
-        >
-          <Stack
-            dir={"column"}
-            rounded={"xl"}
-            bg={bgMode}
-            p={6}
-            h={{ base: "12rem", sm: "20rem" }}
-            w={{ base: "100%", sm: "30rem" }}
-          >
-            <Text fontSize={{ base: "xl", md: "2xl" }}>
-              He&apos;s the hardest working and most diligent person I&apos;ve
-              ever met. Definitely my favorite child.
-            </Text>
-            <Text py={"1rem"}>- My Mom (probably(not))</Text>
-          </Stack>
-          <Stack
-            dir={"column"}
-            rounded={"xl"}
-            bg={bgMode}
-            p={6}
-            h={{ base: "12rem", sm: "20rem" }}
-            w={{ base: "100%", sm: "30rem" }}
-          >
-            <Text fontSize={{ base: "xl", md: "2xl" }}>
-              Honestly, I&apos;ve never met anyone funnier. His memes are top
-              notch and he&apos;s always quick with a joke
-            </Text>
-            <Text py={"1rem"}>- My best friend (definitely)</Text>
-          </Stack>
-          <Stack
-            dir={"column"}
-            rounded={"xl"}
-            bg={bgMode}
-            p={6}
-            h={{ base: "12rem", sm: "20rem" }}
-            w={{ base: "100%", sm: "30rem" }}
-          >
-            <Text fontSize={{ base: "xl", md: "2xl" }}>
-              Who the hell are you?
-            </Text>
-            <Text py={"1rem"}>- Some random guy I met at McDonalds</Text>
-          </Stack>
-        </Stack>
-      </Box> */}
     </Box>
   );
 };

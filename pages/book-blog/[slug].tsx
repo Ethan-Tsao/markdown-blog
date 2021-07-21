@@ -17,6 +17,7 @@ import {
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import Markdown from "components/Markdown";
+import Head from "next/head";
 
 interface Frontmatter {
   title: string;
@@ -43,6 +44,9 @@ const PostPage: React.FC<Props> = ({
       mx="auto"
       px={{ base: "6", lg: "8" }}
     >
+      <Head>
+        <title>Hello</title>
+      </Head>
       <Navbar />
       <Link href="/book-blog" passHref>
         <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>

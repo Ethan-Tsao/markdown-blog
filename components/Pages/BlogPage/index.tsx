@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import BlogCard from "components/Card";
 import { Navbar } from "components/Navbar";
 import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
+import Head from "components/Head";
 
 interface Frontmatter {
   title: string;
@@ -19,9 +20,10 @@ interface IPost {
 
 interface Props {
   posts: IPost[];
+  title: string;
 }
 
-const BlogPage: React.FC<Props> = ({ posts }: Props) => {
+const BlogPage: React.FC<Props> = ({ posts, title }: Props) => {
   const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
   return (
     <Box
@@ -31,6 +33,7 @@ const BlogPage: React.FC<Props> = ({ posts }: Props) => {
       align="center"
       color={mode}
     >
+      <Head title={title} />
       <Navbar />
       <Flex flexDirection="column" alignItems="center">
         {posts.map((post: IPost) => (

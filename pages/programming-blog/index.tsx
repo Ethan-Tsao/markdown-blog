@@ -24,7 +24,7 @@ interface Props {
 }
 
 const ProgrammingBlogPage: React.FC<Props> = ({ posts }: Props) => {
-  return <BlogPage posts={posts} />;
+  return <BlogPage posts={posts} title="Programming" />;
 };
 
 export default BlogPage;

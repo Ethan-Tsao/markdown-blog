@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import React from "react";
 import { GetStaticProps } from "next";
 import BlogPage from "components/Pages/BlogPage";
+import Head from "next/head";
 
 interface Frontmatter {
   title: string;
@@ -24,7 +25,11 @@ interface Props {
 }
 
 const BookBlogPage: React.FC<Props> = ({ posts }) => {
-  return <BlogPage posts={posts} />;
+  return (
+    <>
+      <BlogPage posts={posts} title="Books" />
+    </>
+  );
 };
 
 export default BlogPage;
