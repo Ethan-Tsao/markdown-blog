@@ -5,6 +5,7 @@ import React from "react";
 import { GetStaticProps } from "next";
 import BlogPage from "components/Pages/BlogPage";
 import Head from "next/head";
+import Layout from "components/Layout";
 
 interface Frontmatter {
   title: string;
@@ -26,13 +27,13 @@ interface Props {
 
 const BookBlogPage: React.FC<Props> = ({ posts }) => {
   return (
-    <>
+    <Layout metadata="Books">
       <BlogPage posts={posts} title="Books" />
-    </>
+    </Layout>
   );
 };
 
-export default BlogPage;
+export default BookBlogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join("posts/book-posts"));

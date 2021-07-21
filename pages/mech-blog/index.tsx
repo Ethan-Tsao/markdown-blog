@@ -32,7 +32,7 @@ const MechBlogPage: React.FC<Props> = ({ posts }: Props) => {
   );
 };
 
-export default BlogPage;
+export default MechBlogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join("posts/mech-posts"));

@@ -27,7 +27,7 @@ const GameBlogPage: React.FC<Props> = ({ posts }: Props) => {
   return <BlogPage posts={posts} title="Video Games" />;
 };
 
-export default BlogPage;
+export default GameBlogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join("posts/game-posts"));
