@@ -42,7 +42,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
         flexDirection={{ base: "column", md: "row" }}
         justifyContent="center"
         rounded={12}
-        boxShadow="2xl"
+        boxShadow="dark-2xl"
         paddingBottom={{ base: "1", sm: "5" }}
         bg={bgMode}
         color={mode}

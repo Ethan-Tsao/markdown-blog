@@ -53,6 +53,8 @@ const Home = () => {
               src="images/home/me.jpg"
               objectFit="cover"
               alt="that's me :)"
+              rounded="2xl"
+              boxShadow="dark-lg"
             />
           </AspectRatio>
         </Box>
