@@ -10,7 +10,7 @@ import {
   LinkOverlay,
 } from "@chakra-ui/react";
 import { FaYoutube, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
-import Navbar from "components/Navbar";
+import { Navbar } from "components/Navbar";
 import Typed from "react-typed";
 import Link from "next/link";
 

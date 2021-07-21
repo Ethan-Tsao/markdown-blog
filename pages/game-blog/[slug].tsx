@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import React from "react";
-import Navbar from "components/Navbar";
+import { Navbar } from "components/Navbar";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import {
   Box,

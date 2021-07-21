@@ -13,7 +13,7 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import Navbar from "components/Navbar";
+import { Navbar } from "components/Navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
 import Testimonial from "components/Testimonial";
 
