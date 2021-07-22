@@ -1,6 +1,5 @@
 import BlogCard from "components/Card";
 import { Flex, Heading } from "@chakra-ui/react";
-import Layout from "components/Layout";
 
 interface Frontmatter {
   title: string;

@@ -1,10 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
 import React from "react";
-import { Navbar } from "components/Navbar";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import {
   Box,
   Flex,
@@ -17,6 +14,7 @@ import {
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import Markdown from "components/Markdown";
+import Layout from "components/Layout";
 
 interface Frontmatter {
   title: string;
@@ -38,13 +36,14 @@ const PostPage: React.FC<Props> = ({
 }) => {
   const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
   return (
-    <Box maxW="65%" mx="auto" px={{ base: "6", lg: "8" }}>
-      <Navbar />
+    <Layout metadata={title}>
       <Link href="/programming-blog" passHref>
-        <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
-          <FaArrowLeft />
-          Back to Programming Blog
-        </Button>
+        <Box align="left">
+          <Button size="sm" color={mode} mx={{ base: "6", lg: "8" }}>
+            <FaArrowLeft />
+            Back to Programming Blog
+          </Button>
+        </Box>
       </Link>
       <Flex flexDirection="column" px={{ base: "6", lg: "8" }}>
         <Heading as="h1" size="2xl" py={5} textAlign="left" color={mode}>
@@ -62,10 +61,10 @@ const PostPage: React.FC<Props> = ({
           <Image w="100%" src={cover_image} my={8} alt="cover-image" />
         )}
       </Flex>
-      <Box color={mode}>
+      <Box color={mode} textAlign="left">
         <Markdown text={content} />
       </Box>
-    </Box>
+    </Layout>
   );
 };
 

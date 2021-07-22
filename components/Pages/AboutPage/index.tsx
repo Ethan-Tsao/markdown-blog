@@ -2,14 +2,12 @@ import {
   Stack,
   Heading,
   Image,
-  useColorModeValue,
   IconButton,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
 import { FaYoutube, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import Typed from "react-typed";
-import Layout from "components/Layout";
 
 const AboutPage = () => {
   const typedStrings = [

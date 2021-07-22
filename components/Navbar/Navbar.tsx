@@ -3,31 +3,16 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
-  Icon,
-  Link as ChakraLink,
   LinkBox,
   LinkOverlay,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorMode,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-  MoonIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { DarkModeToggle } from "components/DarkModeToggle";
-import Link from "next/link";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 

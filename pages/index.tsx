@@ -1,20 +1,15 @@
 import {
   Box,
   Stack,
-  Text,
   useColorModeValue,
   Heading,
   SimpleGrid,
   Divider,
-  LinkBox,
-  LinkOverlay,
-  Flex,
   Image,
   AspectRatio,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Navbar } from "components/Navbar";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Testimonial from "components/Testimonial";
 import Layout from "components/Layout";
 
