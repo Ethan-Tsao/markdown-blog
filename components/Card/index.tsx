@@ -5,8 +5,6 @@ import {
   Image,
   Text,
   useColorModeValue,
-  LinkBox,
-  LinkOverlay,
   AspectRatio,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -42,7 +40,7 @@ const BlogCard: React.FC<IIPost> = ({ post }: IIPost) => {
         flexDirection={{ base: "column", md: "row" }}
         justifyContent="center"
         rounded={12}
-        boxShadow="dark-2xl"
+        boxShadow="dark-lg"
         paddingBottom={{ base: "1", sm: "5" }}
         bg={bgMode}
         color={mode}

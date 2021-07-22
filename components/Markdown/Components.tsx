@@ -56,7 +56,7 @@ const header = (props: HeaderProps) => {
 const components = {
   //Paragraphs
   p: (props) => (
-    <Text mb={8} fontSize={{ base: "md", xl: "lg" }} fontWeight="semibold">
+    <Text mb={8} fontSize={{ base: "md", xl: "lg" }}>
       {props.children}
     </Text>
   ),

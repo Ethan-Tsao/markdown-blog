@@ -2,7 +2,6 @@
 import Components from "./Components";
 import React from "react";
 import ReactMarkdown from "react-markdown";
-// import RemarkGFM from "remark-gfm";
 
 interface MarkdownProps {
   text: string;

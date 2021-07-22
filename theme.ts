@@ -20,9 +20,10 @@ const theme = extendTheme({
       },
     }),
   },
-  // fonts: {
-  //   heading: "Caveat",
-  // },
+  fonts: {
+    heading: "Rubik",
+    body: "Rubik",
+  },
   colors: {
     solarizedDark: {
       800: "#052830",
@@ -37,7 +38,7 @@ const theme = extendTheme({
       700: "#DDD1AC",
       600: "#eee8d5",
       500: "#EFEAD9",
-      400: "F2EDDE",
+      400: "#F2EDDE",
     },
   },
 });
