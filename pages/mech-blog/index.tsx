@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import React from "react";
 import { GetStaticProps } from "next";
 import BlogPage from "components/Pages/BlogPage";
-import Head from "components/Head";
+import Layout from "components/Layout";
 
 interface Frontmatter {
   title: string;
@@ -26,9 +26,9 @@ interface Props {
 
 const MechBlogPage: React.FC<Props> = ({ posts }: Props) => {
   return (
-    <>
-      <BlogPage posts={posts} title="Mechanical Keyboards" />
-    </>
+    <Layout metadata="Mechanical Keyboards">
+      <BlogPage posts={posts} />
+    </Layout>
   );
 };
 

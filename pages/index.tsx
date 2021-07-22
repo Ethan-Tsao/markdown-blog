@@ -16,7 +16,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Navbar } from "components/Navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
 import Testimonial from "components/Testimonial";
-import Head from "components/Head";
+import Layout from "components/Layout";
 
 export const MotionChevron = motion(ChevronDownIcon);
 
@@ -24,15 +24,7 @@ const Home = () => {
   const mode = useColorModeValue("solarizedDark.600", "solarizedLight.500");
   const bgMode = useColorModeValue("solarizedLight.700", "solarizedDark.500");
   return (
-    <Box
-      maxW={{ base: "90%", lg: "65%" }}
-      mx="auto"
-      px={{ base: "6", lg: "8" }}
-      align="center"
-      color={mode}
-    >
-      <Head title="Home" />
-      <Navbar />
+    <Layout metadata="Home">
       {/* Heading */}
       <SimpleGrid columns={{ base: 1, xl: 2 }} mt="4rem">
         <Box align="center" maxH="50%">
@@ -104,7 +96,7 @@ const Home = () => {
           />
         </Stack>
       </Box>
-    </Box>
+    </Layout>
   );
 };
 

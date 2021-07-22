@@ -24,7 +24,7 @@ const Testimonial = ({ body, credit }: Props) => {
     <Box py={6} color={mode} w={"full"}>
       <Center
         bg={bgMode}
-        boxShadow={"2xl"}
+        boxShadow="dark-lg"
         rounded={"lg"}
         p={6}
         minH={{ md: "lg", lg: "2xl", xl: "xs" }}

@@ -70,7 +70,6 @@ const PostPage: React.FC<Props> = ({
           )}
         </Flex>
         <Box color={mode}>
-          {/* <ReactMarkdown components={ChakraUIRenderer()} children={content} /> */}
           <Markdown text={content} />
         </Box>
       </Box>

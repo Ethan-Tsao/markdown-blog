@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import React from "react";
 import { GetStaticProps } from "next";
 import BlogPage from "components/Pages/BlogPage";
-
+import Layout from "components/Layout";
 interface Frontmatter {
   title: string;
   date: string;
@@ -24,7 +24,11 @@ interface Props {
 }
 
 const GameBlogPage: React.FC<Props> = ({ posts }: Props) => {
-  return <BlogPage posts={posts} title="Video Games" />;
+  return (
+    <Layout metadata="Video Games">
+      <BlogPage posts={posts} />
+    </Layout>
+  );
 };
 
 export default GameBlogPage;

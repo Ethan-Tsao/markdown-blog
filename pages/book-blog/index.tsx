@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import React from "react";
 import { GetStaticProps } from "next";
 import BlogPage from "components/Pages/BlogPage";
-import Head from "next/head";
 import Layout from "components/Layout";
 
 interface Frontmatter {
@@ -28,7 +27,7 @@ interface Props {
 const BookBlogPage: React.FC<Props> = ({ posts }) => {
   return (
     <Layout metadata="Books">
-      <BlogPage posts={posts} title="Books" />
+      <BlogPage posts={posts} />
     </Layout>
   );
 };
