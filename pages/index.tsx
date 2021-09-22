@@ -12,6 +12,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import Testimonial from "components/Testimonial";
 import Layout from "components/Layout";
+import Example from "components/MotionBox";
 
 export const MotionChevron = motion(ChevronDownIcon);
 
@@ -22,7 +23,7 @@ const Home = () => {
     <Layout metadata="Home">
       {/* Heading */}
       <SimpleGrid columns={{ base: 1, xl: 2 }} mt="4rem">
-        <Box align="center" maxH="50%">
+        <Box alignSelf="center" maxH="50%">
           <Heading textAlign="left" size="4xl">
             Hi, I&apos;m Ethan
           </Heading>

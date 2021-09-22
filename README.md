@@ -31,3 +31,4 @@ Me, Ethan Tsao
 
 [Awesome React Components](https://github.com/brillout/awesome-react-components)
 [Three.js Ripple Animation](https://github.com/Claeb101/3d-ripple-animation/blob/main/src/App.js)
+[Framer Motion Guide](https://blog.maximeheckel.com/posts/guide-animations-spark-joy-framer-motion/)

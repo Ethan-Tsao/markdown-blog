@@ -78,11 +78,11 @@ const AboutPage = () => {
         </Stack>
       </Stack>
       <Stack flex={1} align={"flex-start"}>
-        <Heading textAlign="left" size={"md"} lineHeight={"1.5"} mt={"3vh"}>
+        <Heading textAlign="left" size={"lg"} lineHeight={"1.5"} mt={"3vh"}>
           Thanks for visiting my website! I&apos;m Ethan, a 24 year old
           half-Chinese, half-Korean dude that was born and raised in Texas. I
           went to LMU, a private school in LA, and studied electrical
-          engineering and I am currently a software engineer at AT&T But
+          engineering and I am currently a software engineer at AT&T. But
           that&apos;s what I am, not who I am. I am a{" "}
           <Typed
             strings={typedStrings}
